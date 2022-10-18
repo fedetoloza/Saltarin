@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://juego/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/objetos/PlataformaTrampa.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/plataforma/Plataforma.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/objetos/MonedaOro.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/enemigos/Pajaroto.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/objetos/MonedaBronce.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/enemigos/StormBreaker.tscn" type="PackedScene" id=9]
+[ext_resource path="res://juego/objetos/MonedaPlata.tscn" type="PackedScene" id=10]
+[ext_resource path="res://juego/personaje/Saltarin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://juego/objetos/PlataformaImpulsadora.tscn" type="PackedScene" id=12]
+[ext_resource path="res://juego/objetos/power_ups/PowerUpVolar.tscn" type="PackedScene" id=13]
+
+[node name="Nivel6" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel6.tscn"
+
+[node name="Plataforma" parent="PlataformasNormales" index="0" instance=ExtResource( 5 )]
+position = Vector2( 325.514, 998.992 )
+
+[node name="Plataforma5" parent="PlataformasNormales" index="1" instance=ExtResource( 5 )]
+position = Vector2( 73.5775, 863.666 )
+scale = Vector2( 0.3, 0.5 )
+
+[node name="Plataforma6" parent="PlataformasNormales" index="2" instance=ExtResource( 5 )]
+position = Vector2( 377.514, 578.992 )
+
+[node name="Plataforma2" parent="PlataformasNormales" index="3" instance=ExtResource( 5 )]
+position = Vector2( 1434.51, 844.092 )
+
+[node name="Plataforma3" parent="PlataformasNormales" index="4" instance=ExtResource( 5 )]
+position = Vector2( 1674.71, 666.743 )
+
+[node name="Plataforma4" parent="PlataformasNormales" index="5" instance=ExtResource( 5 )]
+position = Vector2( 285.106, 397.352 )
+
+[node name="PlataformaTrampa" parent="PlataformasNormales" index="6" instance=ExtResource( 4 )]
+position = Vector2( 711.642, 928.349 )
+
+[node name="PlataformaTrampa2" parent="PlataformasNormales" index="7" instance=ExtResource( 4 )]
+position = Vector2( 1070.83, 892.43 )
+
+[node name="PlataformaTrampa3" parent="PlataformasNormales" index="8" instance=ExtResource( 4 )]
+position = Vector2( 1313.28, 553.446 )
+
+[node name="PlataformaTrampa4" parent="PlataformasNormales" index="9" instance=ExtResource( 4 )]
+position = Vector2( 1019.2, 465.894 )
+
+[node name="PlataformaImpulsadora" parent="PlataformasNormales" index="10" instance=ExtResource( 12 )]
+position = Vector2( 114.424, 838.472 )
+
+[node name="Pajaroto" parent="Enemigos" index="0" instance=ExtResource( 7 )]
+position = Vector2( 754.295, 456.536 )
+
+[node name="Pajaroto2" parent="Enemigos" index="1" instance=ExtResource( 7 )]
+position = Vector2( 576.946, 420.617 )
+
+[node name="StormBreaker" parent="Enemigos" index="2" instance=ExtResource( 9 )]
+position = Vector2( 1122.46, -145.92 )
+
+[node name="MonedaBronce" parent="Monedas" index="0" instance=ExtResource( 8 )]
+position = Vector2( 1021.44, 790.214 )
+
+[node name="MonedaBronce4" parent="Monedas" index="1" instance=ExtResource( 8 )]
+position = Vector2( 954.094, 790.214 )
+
+[node name="MonedaBronce2" parent="Monedas" index="2" instance=ExtResource( 8 )]
+position = Vector2( 791.974, 824.677 )
+
+[node name="MonedaBronce3" parent="Monedas" index="3" instance=ExtResource( 8 )]
+position = Vector2( 643.99, 834.931 )
+
+[node name="MonedaPlata" parent="Monedas" index="4" instance=ExtResource( 10 )]
+position = Vector2( 1575.94, 594.905 )
+
+[node name="MonedaPlata2" parent="Monedas" index="5" instance=ExtResource( 10 )]
+position = Vector2( 1643.29, 588.171 )
+
+[node name="MonedaPlata3" parent="Monedas" index="6" instance=ExtResource( 10 )]
+position = Vector2( 1609.61, 525.313 )
+
+[node name="MonedaOro" parent="Monedas" index="7" instance=ExtResource( 6 )]
+position = Vector2( 399.597, 215.513 )
+
+[node name="MonedaOro2" parent="Monedas" index="8" instance=ExtResource( 6 )]
+position = Vector2( 529.803, 215.513 )
+
+[node name="MonedaOro3" parent="Monedas" index="9" instance=ExtResource( 6 )]
+position = Vector2( 455.72, 168.37 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 2 )]
+position = Vector2( 527.558, 837.357 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1" instance=ExtResource( 2 )]
+position = Vector2( 752.05, 325.514 )
+
+[node name="ZanahoriaLlave3" parent="Zanahorias" index="2" instance=ExtResource( 2 )]
+position = Vector2( 1764.51, 594.905 )
+
+[node name="Portal" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 175.104, 300.82 )
+proximo_nivel = "res://juego/niveles/Nivel7.tscn"
+
+[node name="Saltarin" parent="." index="10" instance=ExtResource( 11 )]
+position = Vector2( 235.717, 960.828 )
+
+[node name="PowerUpVolar" parent="." index="11" instance=ExtResource( 13 )]
+position = Vector2( 283.936, 216.13 )
+
+[node name="PowerUpVolar2" parent="." index="12" instance=ExtResource( 13 )]
+position = Vector2( 1822.28, 514.899 )

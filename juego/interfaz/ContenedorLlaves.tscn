@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://recursos/HUD/carrots.png" type="Texture" id=1]
+[ext_resource path="res://juego/interfaz/ContenedorInfo.tscn" type="PackedScene" id=2]
+
+[node name="ContenedorLlaves" instance=ExtResource( 2 )]
+
+[node name="TextureRect" parent="." index="0"]
+margin_top = -32.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )

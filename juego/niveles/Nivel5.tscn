@@ -1,0 +1,73 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://juego/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/plataforma/Plataforma.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/plataforma/PlataformaLarga.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/objetos/Pinches.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/objetos/PlataformaImpulsadora.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/objetos/PlataformaTrampa.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/objetos/MonedaOro.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/enemigos/Pajaroto.tscn" type="PackedScene" id=9]
+[ext_resource path="res://juego/enemigos/SpikeMan.tscn" type="PackedScene" id=10]
+[ext_resource path="res://juego/objetos/MonedaPlata.tscn" type="PackedScene" id=11]
+[ext_resource path="res://juego/personaje/Saltarin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=13]
+
+[node name="Nivel5" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel5.tscn"
+
+[node name="Plataforma" parent="PlataformasNormales" index="0" instance=ExtResource( 2 )]
+position = Vector2( 289.628, 874.103 )
+
+[node name="Plataforma2" parent="PlataformasNormales" index="1" instance=ExtResource( 2 )]
+position = Vector2( 1205.33, 633.832 )
+
+[node name="Plataforma3" parent="PlataformasNormales" index="2" instance=ExtResource( 2 )]
+position = Vector2( 262.931, 647.181 )
+
+[node name="PlataformaTrampa" parent="PlataformasCortas" index="0" instance=ExtResource( 7 )]
+position = Vector2( 1488.38, 532.047 )
+
+[node name="PlataformaImpulsadora" parent="PlataformasCortas" index="1" instance=ExtResource( 6 )]
+position = Vector2( 1104.92, 612.491 )
+
+[node name="PlataformaLarga" parent="PlataformasLargas" index="0" instance=ExtResource( 3 )]
+position = Vector2( 805.192, 756.171 )
+
+[node name="Pinches" parent="Enemigos" index="0" instance=ExtResource( 4 )]
+position = Vector2( 713.845, 737.803 )
+
+[node name="SpikeMan" parent="Enemigos" index="1" instance=ExtResource( 10 )]
+position = Vector2( 172.71, 622.204 )
+
+[node name="Pajaroto" parent="Enemigos" index="2" instance=ExtResource( 9 )]
+position = Vector2( 876, 484 )
+
+[node name="MonedaOro" parent="Monedas" index="0" instance=ExtResource( 8 )]
+position = Vector2( 880.18, 174.209 )
+
+[node name="MonedaOro2" parent="Monedas" index="1" instance=ExtResource( 8 )]
+position = Vector2( 878.302, 232.454 )
+
+[node name="MonedaPlata" parent="Monedas" index="2" instance=ExtResource( 11 )]
+position = Vector2( 1085.76, 422.794 )
+
+[node name="MonedaPlata2" parent="Monedas" index="3" instance=ExtResource( 11 )]
+position = Vector2( 1024.52, 363.931 )
+
+[node name="MonedaPlata3" parent="Monedas" index="4" instance=ExtResource( 11 )]
+position = Vector2( 957.253, 323.568 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 5 )]
+position = Vector2( 172.866, 472.292 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1" instance=ExtResource( 5 )]
+position = Vector2( 1546.76, 431.884 )
+
+[node name="Saltarin" parent="." index="9" instance=ExtResource( 12 )]
+position = Vector2( 186.818, 848.613 )
+
+[node name="Portal" parent="." index="10" instance=ExtResource( 13 )]
+position = Vector2( 877.635, 663.578 )
+proximo_nivel = "res://juego/niveles/Nivel6.tscn"

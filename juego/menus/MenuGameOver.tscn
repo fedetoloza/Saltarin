@@ -1,0 +1,180 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://recursos/Enemies/wingMan2.png" type="Texture" id=1]
+[ext_resource path="res://recursos/Enemies/cloud.png" type="Texture" id=2]
+[ext_resource path="res://recursos/Environment/ground_grass_small.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Enemies/spikeMan_stand.png" type="Texture" id=4]
+[ext_resource path="res://recursos/Players/bunny1_hurt.png" type="Texture" id=5]
+[ext_resource path="res://juego/menus/Botones/BotonSalir.gd" type="Script" id=6]
+[ext_resource path="res://juego/menus/Botones/BotonMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://recursos/Fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://juego/menus/MenuGameOver.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 10
+outline_color = Color( 0.0784314, 0.0235294, 0.705882, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.00392157, 0.00784314, 0.0784314, 1 )
+border_width_left = 3
+border_width_bottom = 6
+border_color = Color( 0.207843, 0.2, 0.2, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.537255, 0.0313726, 0.0313726, 1 )
+border_width_left = 4
+border_width_bottom = 6
+border_color = Color( 0.282353, 0.27451, 0.27451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0117647, 0.0392157, 0.301961, 1 )
+border_width_bottom = 6
+
+[sub_resource type="DynamicFont" id=7]
+size = 26
+font_data = ExtResource( 8 )
+
+[node name="MenuGameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.05945
+margin_right = 1.05945
+color = Color( 0.243137, 0.00392157, 0.301961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprites" type="Node" parent="."]
+
+[node name="ground_grass_small2" type="Sprite" parent="Sprites"]
+position = Vector2( 444.611, 394.211 )
+scale = Vector2( 0.767815, 0.759584 )
+texture = ExtResource( 3 )
+
+[node name="ground_grass_small3" type="Sprite" parent="Sprites"]
+position = Vector2( 272.076, 467.75 )
+scale = Vector2( 0.767815, 0.759584 )
+texture = ExtResource( 3 )
+
+[node name="ground_grass_small" type="Sprite" parent="Sprites"]
+position = Vector2( 300.237, 537.956 )
+texture = ExtResource( 3 )
+
+[node name="cloud" type="Sprite" parent="Sprites"]
+position = Vector2( 406.34, 188.046 )
+scale = Vector2( 0.807595, 0.788685 )
+texture = ExtResource( 2 )
+
+[node name="wingMan2" type="Sprite" parent="Sprites"]
+position = Vector2( 323.495, 288.691 )
+scale = Vector2( 0.816723, 0.779469 )
+texture = ExtResource( 1 )
+
+[node name="wingMan3" type="Sprite" parent="Sprites"]
+position = Vector2( 517.711, 263.746 )
+scale = Vector2( 0.548588, 0.612945 )
+texture = ExtResource( 1 )
+
+[node name="spikeMan_stand" type="Sprite" parent="Sprites"]
+position = Vector2( 465.771, 312.978 )
+scale = Vector2( 0.699019, 0.605767 )
+texture = ExtResource( 4 )
+
+[node name="spikeMan_stand2" type="Sprite" parent="Sprites"]
+position = Vector2( 407.5, 323.057 )
+scale = Vector2( 0.762015, 0.654538 )
+texture = ExtResource( 4 )
+
+[node name="bunny1_hurt" type="Sprite" parent="Sprites"]
+self_modulate = Color( 0.913725, 0.713726, 0.505882, 1 )
+position = Vector2( 302.353, 412.532 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Sprites"]
+margin_left = 125.875
+margin_top = 395.657
+margin_right = 465.875
+margin_bottom = 608.657
+rect_scale = Vector2( 1.4098, 1.0893 )
+custom_fonts/font = SubResource( 1 )
+text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -561.0
+margin_top = -201.0
+margin_right = -182.0
+margin_bottom = 99.0
+rect_rotation = -6.15357
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonReintentar" parent="VBoxContainer" instance=ExtResource( 7 )]
+margin_right = 379.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 2 )
+text = "Reintentar"
+
+[node name="BotonMenu" parent="VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 94.0
+margin_right = 379.0
+margin_bottom = 178.0
+custom_fonts/font = SubResource( 3 )
+text = "Menu"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 188.0
+margin_right = 379.0
+margin_bottom = 192.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+margin_top = 202.0
+margin_right = 379.0
+margin_bottom = 206.0
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+margin_top = 216.0
+margin_right = 379.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Salir"
+script = ExtResource( 6 )
+
+[connection signal="pressed" from="VBoxContainer/BotonReintentar" to="." method="_on_BotonReintentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_BotonSalir_pressed"]

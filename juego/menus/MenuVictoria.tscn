@@ -1,0 +1,269 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://juego/menus/Botones/BotonMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/menus/Botones/BotonSalir.gd" type="Script" id=3]
+[ext_resource path="res://recursos/Fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://recursos/Environment/ground_cake.png" type="Texture" id=6]
+[ext_resource path="res://juego/menus/MenuVictoria.gd" type="Script" id=7]
+[ext_resource path="res://recursos/Items/carrot.png" type="Texture" id=8]
+[ext_resource path="res://recursos/Players/bunny1_stand.png" type="Texture" id=9]
+[ext_resource path="res://recursos/Players/bunny2_stand.png" type="Texture" id=10]
+[ext_resource path="res://recursos/Items/bronze_1.png" type="Texture" id=11]
+[ext_resource path="res://recursos/Items/gold_1.png" type="Texture" id=12]
+[ext_resource path="res://recursos/Items/silver_1.png" type="Texture" id=13]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.00784314, 0.0431373, 0.380392, 1 )
+border_width_bottom = 6
+border_color = Color( 0.501961, 0.498039, 0.498039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.847059, 0.0352941, 0.0352941, 1 )
+border_width_bottom = 6
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.00392157, 0.00784314, 0.0784314, 1 )
+border_width_left = 3
+border_width_bottom = 6
+border_color = Color( 0.207843, 0.2, 0.2, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.537255, 0.0313726, 0.0313726, 1 )
+border_width_left = 4
+border_width_bottom = 6
+border_color = Color( 0.282353, 0.27451, 0.27451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0117647, 0.0392157, 0.301961, 1 )
+border_width_bottom = 6
+
+[sub_resource type="DynamicFont" id=7]
+size = 26
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 48
+outline_size = 10
+outline_color = Color( 0.0784314, 0.0235294, 0.705882, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 35
+outline_size = 5
+outline_color = Color( 0.0784314, 0.0235294, 0.705882, 1 )
+font_data = ExtResource( 4 )
+
+[node name="MenuVictoria" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00784314, 0.666667, 0.752941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -450.735
+margin_top = -150.0
+margin_right = -71.7346
+margin_bottom = 150.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonMenu" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 379.0
+margin_bottom = 131.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Menu"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 141.0
+margin_right = 379.0
+margin_bottom = 145.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+margin_top = 155.0
+margin_right = 379.0
+margin_bottom = 159.0
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+margin_top = 169.0
+margin_right = 379.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Salir"
+script = ExtResource( 3 )
+
+[node name="Sprites" type="Node" parent="."]
+
+[node name="bronze_1" type="Sprite" parent="Sprites"]
+position = Vector2( 454.483, 418.2 )
+scale = Vector2( 0.320485, 0.304252 )
+texture = ExtResource( 11 )
+
+[node name="bronze_2" type="Sprite" parent="Sprites"]
+position = Vector2( 483.073, 419.461 )
+scale = Vector2( 0.320485, 0.304252 )
+texture = ExtResource( 11 )
+
+[node name="bronze_3" type="Sprite" parent="Sprites"]
+position = Vector2( 355.257, 417.779 )
+scale = Vector2( 0.320485, 0.304252 )
+texture = ExtResource( 11 )
+
+[node name="bronze_4" type="Sprite" parent="Sprites"]
+position = Vector2( 534.788, 417.779 )
+scale = Vector2( 0.320485, 0.304252 )
+texture = ExtResource( 11 )
+
+[node name="ground_cake" type="Sprite" parent="Sprites"]
+position = Vector2( 398.129, 477.103 )
+texture = ExtResource( 6 )
+
+[node name="bunny2_stand" type="Sprite" parent="Sprites"]
+position = Vector2( 417.136, 330.664 )
+texture = ExtResource( 10 )
+
+[node name="carrot" type="Sprite" parent="Sprites"]
+position = Vector2( 383.941, 417.296 )
+rotation = 1.99361
+scale = Vector2( 0.641713, 0.702698 )
+texture = ExtResource( 8 )
+
+[node name="carrot3" type="Sprite" parent="Sprites"]
+position = Vector2( 565.637, 416.824 )
+rotation = 1.99361
+scale = Vector2( 0.641713, 0.702698 )
+texture = ExtResource( 8 )
+
+[node name="silver_1" type="Sprite" parent="Sprites"]
+position = Vector2( 257.474, 424 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 13 )
+
+[node name="silver_2" type="Sprite" parent="Sprites"]
+position = Vector2( 363.974, 433 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 13 )
+
+[node name="silver_3" type="Sprite" parent="Sprites"]
+position = Vector2( 488.474, 437.5 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 13 )
+
+[node name="silver_4" type="Sprite" parent="Sprites"]
+position = Vector2( 576.974, 427.5 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 13 )
+
+[node name="bunny1_stand" type="Sprite" parent="Sprites"]
+position = Vector2( 318.78, 331.765 )
+texture = ExtResource( 9 )
+
+[node name="carrot2" type="Sprite" parent="Sprites"]
+position = Vector2( 293.446, 426.604 )
+rotation = -0.669561
+scale = Vector2( 0.641713, 0.702698 )
+texture = ExtResource( 8 )
+
+[node name="gold_1" type="Sprite" parent="Sprites"]
+position = Vector2( 236.192, 434.498 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 12 )
+
+[node name="gold_2" type="Sprite" parent="Sprites"]
+position = Vector2( 405.383, 432.829 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 12 )
+
+[node name="gold_3" type="Sprite" parent="Sprites"]
+position = Vector2( 339.309, 426.489 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 12 )
+
+[node name="gold_4" type="Sprite" parent="Sprites"]
+position = Vector2( 510.502, 425.821 )
+rotation = -0.669561
+scale = Vector2( 0.313568, 0.360551 )
+texture = ExtResource( 12 )
+
+[node name="carrot4" type="Sprite" parent="Sprites"]
+position = Vector2( 440.69, 429.436 )
+rotation = -0.669561
+scale = Vector2( 0.641713, 0.702698 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 189.354
+margin_top = 29.2472
+margin_right = 529.354
+margin_bottom = 242.247
+rect_scale = Vector2( 1.4098, 1.0893 )
+custom_fonts/font = SubResource( 9 )
+text = "Ganaste"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelPuntaje" type="Panel" parent="."]
+margin_left = 178.538
+margin_top = 559.956
+margin_right = 678.538
+margin_bottom = 639.956
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntaje" type="Label" parent="PanelPuntaje"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -235.5
+margin_top = -38.0
+margin_right = -53.5
+margin_bottom = 15.0
+rect_scale = Vector2( 1.3, 1.3 )
+custom_fonts/font = SubResource( 8 )
+text = "Puntaje:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_BotonSalir_pressed"]

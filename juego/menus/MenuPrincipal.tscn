@@ -1,0 +1,233 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://juego/menus/Botones/BotonSalir.gd" type="Script" id=1]
+[ext_resource path="res://juego/menus/MenuPrincipal.gd" type="Script" id=2]
+[ext_resource path="res://recursos/Environment/ground_grass.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Players/bunny1_stand.png" type="Texture" id=4]
+[ext_resource path="res://recursos/Players/bunny1_jump.png" type="Texture" id=5]
+[ext_resource path="res://juego/menus/Botones/BotonMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://recursos/Background/bg_layer1.png" type="Texture" id=8]
+[ext_resource path="res://recursos/Background/bg_layer3.png" type="Texture" id=9]
+[ext_resource path="res://recursos/Background/bg_layer4.png" type="Texture" id=10]
+[ext_resource path="res://recursos/Background/bg_layer2.png" type="Texture" id=11]
+[ext_resource path="res://recursos/Enemies/cloud.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animacion_menu"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bunny1_stand:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bunny1_jump:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bunny1_jump:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.6, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 380, 400 ), Vector2( 380, 200 ), Vector2( 380, 266.667 ), Vector2( 380, 400 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bunny1_jump:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 180.0, 360.0, 360.0 ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.00392157, 0.00784314, 0.0784314, 1 )
+border_width_left = 3
+border_width_bottom = 6
+border_color = Color( 0.207843, 0.2, 0.2, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.537255, 0.0313726, 0.0313726, 1 )
+border_width_left = 4
+border_width_bottom = 6
+border_color = Color( 0.282353, 0.27451, 0.27451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0117647, 0.0392157, 0.301961, 1 )
+border_width_bottom = 6
+
+[sub_resource type="DynamicFont" id=6]
+size = 26
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 84
+outline_size = 4
+outline_color = Color( 0.00784314, 0.00392157, 0.0156863, 1 )
+font_data = ExtResource( 7 )
+
+[node name="MenuPrincipal" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.533333, 0.0196078, 0.921569, 1 )
+
+[node name="bunny1_stand" type="Sprite" parent="."]
+position = Vector2( 380, 410 )
+texture = ExtResource( 4 )
+
+[node name="bunny1_jump" type="Sprite" parent="."]
+visible = false
+position = Vector2( 380, 400 )
+rotation = 6.28319
+texture = ExtResource( 5 )
+
+[node name="cloud" type="Sprite" parent="."]
+position = Vector2( 629.227, 97.3304 )
+texture = ExtResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "animacion_menu"
+anims/animacion_menu = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -572.0
+margin_top = 248.0
+margin_right = -120.0
+margin_bottom = -204.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonIniciar" parent="VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 452.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 2 )
+text = "iniciar"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+margin_top = 139.0
+margin_right = 452.0
+margin_bottom = 268.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Salir"
+script = ExtResource( 1 )
+
+[node name="ground_grass" type="Sprite" parent="."]
+position = Vector2( 399.5, 557 )
+texture = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -450 )
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesLejanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesMedias" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesMedias"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesCercanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesCercanas"]
+margin_left = -1.88782
+margin_right = 2046.11
+margin_bottom = 2048.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 661.0
+margin_top = 41.0
+margin_right = 1255.0
+margin_bottom = 332.0
+rect_rotation = -2.07263
+custom_fonts/font = SubResource( 7 )
+text = "Saltarin
+Recargado
+"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="VBoxContainer/BotonIniciar" to="." method="_on_BotonIniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_BotonSalir_pressed"]

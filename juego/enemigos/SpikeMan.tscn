@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://recursos/Enemies/spikeMan_walk2.png" type="Texture" id=1]
+[ext_resource path="res://recursos/Enemies/spikeMan_walk1.png" type="Texture" id=2]
+[ext_resource path="res://juego/enemigos/SpikeMan.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "caminar",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14.9139, 2.46737 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 19.0635
+height = 5.53532
+
+[node name="SpikeMan" type="KinematicBody2D"]
+z_index = 35
+z_as_relative = false
+collision_layer = 8
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="AnimatedSpike" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -39.2775 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "caminar"
+
+[node name="ColisionPies" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0589943, -3.59849 )
+shape = SubResource( 2 )
+
+[node name="DetectorVacio" type="RayCast2D" parent="."]
+modulate = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+position = Vector2( 40, -5 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 4
+
+[node name="DetectorPared" type="RayCast2D" parent="."]
+modulate = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+position = Vector2( 40, -30 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 4
+
+[node name="DetectorJugador" type="Area2D" parent="."]
+modulate = Color( 0.176471, 0.160784, 0.160784, 1 )
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorJugador"]
+position = Vector2( 0, -26.4619 )
+shape = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectorJugador"]
+polygon = PoolVector2Array( -9.13853, -45.025, 0.00127411, -75.2202, 9.01352, -44.8023 )
+
+[connection signal="body_entered" from="DetectorJugador" to="." method="_on_DetectorJugador_body_entered"]

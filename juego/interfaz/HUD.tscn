@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://juego/interfaz/ContenedorVida.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/interfaz/ContenedorLlaves.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/interfaz/ContenedorPlata.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/interfaz/ContenedorBronce.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/interfaz/ContenedorOro.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/interfaz/HUD.gd" type="Script" id=6]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 128.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 9.5 ]
+}
+
+[node name="ContenedorVida" parent="." instance=ExtResource( 1 )]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 144.0
+margin_bottom = 64.0
+
+[node name="ContenedorLlaves" parent="." instance=ExtResource( 2 )]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 144.0
+margin_bottom = 128.0
+
+[node name="ContenedorOro" parent="." instance=ExtResource( 5 )]
+margin_left = 1176.0
+margin_top = 16.0
+margin_right = 1264.0
+margin_bottom = 48.0
+
+[node name="ContenedorBronce" parent="." instance=ExtResource( 4 )]
+margin_left = 1176.0
+margin_top = 96.0
+margin_right = 1264.0
+margin_bottom = 128.0
+
+[node name="ContenedorPlata" parent="." instance=ExtResource( 3 )]
+margin_left = 1176.0
+margin_top = 56.0
+margin_right = 1264.0
+margin_bottom = 88.0
